@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>God Eye View</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+        <p>System booting...</p>
+      </div>
+
+      <div class="toast-container" id="toastContainer"></div>
+
+      <header class="header">
+        <div class="logo">
+          <div class="eye-icon">◉</div>
+          <h1>GOD EYE VIEW</h1>
+        </div>
+
+        <div class="status-indicators">
+          <div class="status-item">
+            <span class="status-dot active"></span>
+            <span>Online</span>
+          </div>
+          <div class="status-item">
+            <span class="status-dot active"></span>
+            <span>Camera</span>
+          </div>
+          <div class="status-item">
+            <span class="status-dot"></span>
+            <span>Mic</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section class="camera-section">
+          <div class="camera-frame">
+            <video id="camera-feed" autoplay playsinline muted></video>
+            <div class="camera-overlay">
+              <div class="corner top-left"></div>
+              <div class="corner top-right"></div>
+              <div class="corner bottom-left"></div>
+              <div class="corner bottom-right"></div>
+              <div class="center-crosshair"></div>
+              <div class="scan-line"></div>
+            </div>
+          </div>
+
+          <div class="camera-controls">
+            <button id="cameraBtn" class="control-btn active">
+              <span class="btn-icon">◉</span>Camera
+            </button>
+            <button id="audioBtn" class="control-btn">
+              <span class="btn-icon">♫</span>Audio
+            </button>
+          </div>
+        </section>
+
+        <aside class="ai-section">
+          <div class="visualizer">
+            <canvas id="visualizer"></canvas>
+            <div class="pulse-ring"></div>
+          </div>
+
+          <div class="response-area">
+            <div class="response-header">
+              <h2>AI RESPONSE</h2>
+              <div class="ai-indicator">
+                <span class="ai-pulse"></span>
+                <span>Listening</span>
+              </div>
+            </div>
+
+            <div id="messages" class="messages-container">
+              <div class="message system-message">System ready. Camera and voice input available.</div>
+            </div>
+
+            <div class="input-controls">
+              <div class="voice-input">
+                <button id="voiceBtn" class="voice-btn">
+                  <span>🎙</span> Start Voice
+                </button>
+                <div class="voice-indicator">
+                  <div id="voiceLevel" class="level"></div>
+                </div>
+              </div>
+
+              <div class="text-input-group">
+                <input
+                  id="questionInput"
+                  class="text-input"
+                  type="text"
+                  placeholder="Frage eingeben..."
+                  aria-label="Frage eingeben"
+                />
+                <button id="sendBtn" class="send-btn">➤</button>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </main>
+
+      <footer class="footer">
+        <div class="stats">
+          <span>● MODE: LOCAL</span>
+          <span>● CAMERA: LIVE</span>
+          <span>● VOICE: READY</span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
